@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background:#091921; */
+    background:#fff;
+}
+
+.calender
+{
+    margin: 10px;
+    position: relative;
+    width:200px;
+    background: #091921;
+    text-align:center;
+    border-radius: 8px;
+    overflow:hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0004);
+}
+.calender #monthName
+{
+    position: relative;
+    padding: 5px 10px;
+    background: #ff6331;
+    color:#fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+.calender #dayName
+{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #999;
+}
+.calender #dayNumber
+{
+    margin-top: 0px;
+    line-height: 1em;
+    font-size: 80px;
+    font-weight: 700;
+    color: #999;
+}
+.calender #year 
+{
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #999;
+}
+
+.clock
+{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(clock.png);
+    background-size: cover;
+    border-radius: 4px solid #091921;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(0, 0, 0,0.05),
+                inset 0 -15px 15px rgba(0, 0, 0,0.05),
+                0 15px 15px rgba(200, 200, 200,0.8),
+                inset 0 15px 15px rgba(200, 200, 200,0.8);
+}
+.clock::before
+{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    /* background:#fff;*/
+    background: #091921; 
+    border-radius: 50%;
+    z-index: 10000;
+}
+.clock .hour,
+.clock .min,
+.clock .sec
+{
+    position: absolute;
+}
+.clock .hour, .hr
+{
+    width: 160px;
+    height: 160px;
+}
+.clock .min, .mn
+{
+    width: 190px;
+    height: 190px;
+}
+.clock .sec, .sc
+{
+    width: 230px;
+    height: 230px;
+}
+.hr , .mn,.sc
+{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: absolute;
+    border-radius: 50%;
+}
+.hr::before
+{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background:#ff105e;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+.mn::before
+{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    /* background:#fff; */
+    background: #091921;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+.sc::before
+{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    /* background:#fff; */
+    background: #091921;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}

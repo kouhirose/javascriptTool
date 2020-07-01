@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="calender">
+		<p id="monthName"></p>
+		<p id="dayName"></p>
+		<p id="dayNumber"></p>
+		<p id="year"></p>
+	</div>
+	<div class="clock">
+		<div class="hour">
+			<div class="hr" id="hr"></div>
+		</div>
+		<div class="min">
+			<div class="mn" id="mn"></div>
+		</div>
+		<div class="sec">
+			<div class="sc" id="sc"></div>
+		</div>
+	</div>
+	<script>
+		//calender
+		//const lang = navigator.language;
+		const lang = "en-UK";//言語をイギリス語に
+		let date = new Date();
+
+		let dayNumber = date.getDate();
+		let month = date.getMonth();
+		let dayName = date.toLocaleDateString(lang, { weekday: 'long' })
+		let monthName = date.toLocaleDateString(lang, { month: 'long' })
+		let year = date.getFullYear()
+
+		document.getElementById('monthName').innerHTML = monthName;
+		document.getElementById('dayName').innerHTML = dayName;
+		document.getElementById('dayNumber').innerHTML = dayNumber;
+		document.getElementById('year').innerHTML = year;
+
+		//clock
+		const deg = 6;
+		const hr = document.querySelector('#hr');
+		const mn = document.querySelector('#mn');
+		const sc = document.querySelector('#sc');
+
+		setInterval(() => {
+			let day = new Date();
+			let hh = day.getHours() * 30;
+			let mm = day.getMinutes() * deg;
+			let ss = day.getSeconds() * deg;
+
+			hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+			mn.style.transform = `rotateZ(${mm}deg)`;
+			sc.style.transform = `rotateZ(${ss}deg)`;
+		})
+
+
+
+	</script>
+</body>
+
+</html>
